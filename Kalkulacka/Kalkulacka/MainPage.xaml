@@ -2,11 +2,77 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kalkulacka.MainPage">
+    <StackLayout BackgroundColor="#000" WidthRequest="500">
+        
+        <Label Text=""
+               x:Name="resultLabel"
+               FontSize="55"
+               Padding="10"
+               HeightRequest="300"
+               HorizontalTextAlignment="End"/>
+        
+        <Grid x:Name="ContentPanel" HorizontalOptions="Center"  RowSpacing="10" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="VerticalOptions" Value="Center" />
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="HeightRequest" Value="55" />
+                    <Setter Property="WidthRequest" Value="70" />
+                    <Setter Property="BackgroundColor" Value="#202121" />
+                    <Setter Property="BorderColor" Value="DimGray" />
+                    <Setter Property="BorderWidth" Value="0.5" />
+                    <Setter Property="FontSize" Value="35" />
+                    <Setter Property="CornerRadius" Value="35" />
+                    <Setter Property="Padding" Value="5" />
+                </Style>
+            </Grid.Resources>
+                
+            <Button Text="C" Clicked="onButtonClicked" TextColor="OrangeRed"/>
+            <Button Text="(" Clicked="onButtonClicked" Grid.Column="1"/>
+            <Button Text=")" Clicked="onButtonClicked" Grid.Column="2" />
+            <Button Text="/" Clicked="onButtonClicked" Grid.Column="3" TextColor="LawnGreen"/>
+
+            <Button Text="7" Clicked="onButtonClicked" Grid.Row="1"/>
+            <Button Text="8" Clicked="onButtonClicked" Grid.Row="1" Grid.Column="1" />
+            <Button Text="9" Clicked="onButtonClicked" Grid.Row="1" Grid.Column="2" />
+            <Button Text="*" Clicked="onButtonClicked" Grid.Row="1" Grid.Column="3" TextColor="LawnGreen"/>
+
+            <Button Text="4" Clicked="onButtonClicked" Grid.Row="2"/>
+            <Button Text="5" Clicked="onButtonClicked" Grid.Row="2" Grid.Column="1" />
+            <Button Text="6" Clicked="onButtonClicked" Grid.Row="2" Grid.Column="2" />
+            <Button Text="-" Clicked="onButtonClicked" Grid.Row="2" Grid.Column="3" TextColor="LawnGreen"/>
+
+            <Button Text="1" Clicked="onButtonClicked" Grid.Row="3"/>
+            <Button Text="2" Clicked="onButtonClicked" Grid.Row="3" Grid.Column="1" />
+            <Button Text="3" Clicked="onButtonClicked" Grid.Row="3" Grid.Column="2" />
+            <Button Text="+" Clicked="onButtonClicked" Grid.Row="3" Grid.Column="3" TextColor="LawnGreen"/>
+
+            <Button Text="⌫" Clicked="onButtonClicked" Grid.Row="4"/>
+            <Button Text="0" Clicked="onButtonClicked" Grid.Row="4" Grid.Column="1" />
+            <Button Text="." Clicked="onButtonClicked"  Grid.Row="4" Grid.Column="2" />
+            <Button Text="=" Clicked="onButtonClicked" Grid.Row="4" Grid.Column="3" BackgroundColor="ForestGreen"/>
+        </Grid>
+    </StackLayout>
+    <!--<StackLayout BackgroundColor="#000000">
+        
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">#38393b
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
+        </Frame>#404142
         <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
         <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try! HOT RELOAD PIPINA" FontSize="16" Padding="30,0,30,0"/>
         <Label FontSize="16" Padding="30,24,30,0">
@@ -19,6 +85,6 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-    </StackLayout>
+    </StackLayout>-->
 
 </ContentPage>
