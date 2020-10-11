@@ -17,10 +17,11 @@ namespace Kalkulacka
             string result;
             try
             {
-                result = Eval.Execute<int>(input).ToString();
+                double a = Eval.Execute<int>(input);
+                result = a.ToString();      
             } catch
             {
-                result = "ERR";
+                result = "SUS";
             }
             return result;
         }
@@ -55,11 +56,8 @@ namespace Kalkulacka
                     {
                         resultLabel.Text = "";
                     }
-                    else
-                    {
-                        resultLabel.Text += content;
-                    }
-                    
+                    resultLabel.Text += content;
+
                     break;
 
             }
